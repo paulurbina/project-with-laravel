@@ -11,10 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@index');
 
-Route::get('/fotos/{numero?}', function ($numero = 'whitout number') {
-    return 'hello world: '.$numero;
-})->where('numero', '[0-9]+');
+Route::get('fotos', 'PagesController@fotos')->name('fotografias');
+
+Route::get('noticias', function() {
+    return view('blog');
+})->name('noticias');
+
+Route::get('about/{nombre?}', function($nombre = null) {
+    $equipo = [ 'tatiana', 'jimena', 'kevin' ];
+
+    return view('about', compact('equipo', 'nombre'));
+})->name('nosotros');
