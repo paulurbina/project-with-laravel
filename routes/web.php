@@ -15,12 +15,6 @@ Route::get('/', 'PagesController@index');
 
 Route::get('fotos', 'PagesController@fotos')->name('fotografias');
 
-Route::get('noticias', function() {
-    return view('blog');
-})->name('noticias');
+Route::get('noticias', 'PagesController@blog')->name('noticias');
 
-Route::get('about/{nombre?}', function($nombre = null) {
-    $equipo = [ 'tatiana', 'jimena', 'kevin' ];
-
-    return view('about', compact('equipo', 'nombre'));
-})->name('nosotros');
+Route::get('about/{nombre?}', 'PagesController@about')->name('nosotros');
