@@ -1,10 +1,10 @@
-@extends('master')
+@extends('welcome')
 
 @section('seccion')
     <h1>Este es el equipo de trabajo</h1>
 
     @foreach ($equipo as $item)
-        <a href="{{ route('nosotros', $item) }}" class="text-success">{{ $item }}</a>
+        <a href="{{ route('nosotros', $item) }}" class="text-success">{{ $item }}</a><br>
     @endforeach
 
     @if (!empty($nombre))

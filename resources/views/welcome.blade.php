@@ -11,34 +11,25 @@
     <title>Table</title>
   </head>
   <body>
+      <div class="container pt-4">
+          <a href="{{ route('inicio') }}" class="btn btn-primary">Inicio</a>
+          <a href="{{ route('fotografias') }}" class="btn btn-primary">Fotos</a>
+          <a href="{{ route('noticias') }}" class="btn btn-primary">Blog</a>
+          <a href="{{ route('nosotros') }}" class="btn btn-primary">About</a>
+      </div>
 
-    <div class="container mt-4">
-        <h1 class="display-4">
-            Notas
-        </h1>
+      <div class="container">
+          @yield('seccion')
+      </div>
+      <footer>
+          <blockquote class="blockquote text-center">
+              <p class="mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+              <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            </blockquote>
 
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Descripcion</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach ($notas as $item)
-                  <tr>
-                  <th scope="row">{{ $item->id }}</th>
-                    <td>{{ $item->nombre }}</td>
-                    <td>{{ $item->description }}</td>
-                    <td>@mdo</td>
-                  </tr>    
-              @endforeach()
-              
-            </tbody>
-          </table>
+      </footer>
 
+        
 
 
     </div>

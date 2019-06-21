@@ -11,7 +11,14 @@ class PagesController extends Controller
 
         $notas = App\Nota::all();
 
-        return view('welcome', compact('notas'));
+        return view('plantilla', compact('notas'));
+    }
+
+    public function detalle ($id) {
+        $nota = App\Nota::findOrFail($id);
+
+        return view('notas.detalle', compact('nota'));
+
     }
 
     public function fotos() {
