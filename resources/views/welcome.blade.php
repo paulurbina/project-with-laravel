@@ -11,23 +11,23 @@
     <title>Welcome Laravel</title>
   </head>
   <body>
-      <div class="container pt-4">
+      {{-- <div class="container pt-4">
           <a href="{{ route('inicio') }}" class="btn btn-primary">Inicio</a>
           <a href="{{ route('fotografias') }}" class="btn btn-primary">Fotos</a>
           <a href="{{ route('noticias') }}" class="btn btn-primary">Blog</a>
           <a href="{{ route('nosotros') }}" class="btn btn-primary">About</a>
-      </div>
+      </div> --}}
 
-      <div class="container">
+      {{-- <div class="container">
           @yield('seccion')
-      </div>
-      <footer>
+      </div> --}}
+      {{-- <footer>
           <blockquote class="blockquote text-center">
               <p class="mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
               <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
             </blockquote>
 
-      </footer>
+      </footer> --}}
 
         
 

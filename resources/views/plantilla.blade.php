@@ -1,6 +1,6 @@
-@extends('welcome')
+@extends('home')
 
-@section('seccion')
+@section('content')
   <div class="container mt-4">
       <h1 class="display-4">
           Notas

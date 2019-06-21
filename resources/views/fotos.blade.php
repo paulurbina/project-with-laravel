@@ -1,5 +1,7 @@
-@extends('welcome')
+@extends('home')
 
-@section('seccion')
-    <h1>Fotos</h1>
+@section('content')
+    <div class="container">
+        <h1>Fotos</h1>
+    </div>
 @endsection

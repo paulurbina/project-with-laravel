@@ -27,3 +27,7 @@ Route::get('fotos', 'PagesController@fotos')->name('fotografias');
 Route::get('noticias', 'PagesController@blog')->name('noticias');
 
 Route::get('about/{nombre?}', 'PagesController@about')->name('nosotros');
+
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
