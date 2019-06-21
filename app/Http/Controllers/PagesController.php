@@ -8,17 +8,13 @@ use App;
 class PagesController extends Controller
 {
     public function index() {
-
-        $notas = App\Nota::all();
-
+        $notas = App\Nota::paginate(5);
         return view('plantilla', compact('notas'));
     }
 
     public function detalle ($id) {
         $nota = App\Nota::findOrFail($id);
-
         return view('notas.detalle', compact('nota'));
-
     }
 
     public function crear(Request $request) {
@@ -58,6 +54,13 @@ class PagesController extends Controller
         $notaUpdate->save();
         return  back()->with('mensajeUpdate', 'Nota editada con exito!');
 
+    }
+
+    public function eliminar ($id) {
+        $notaEliminar = App\Nota::findOrFail($id);
+        $notaEliminar->delete();
+
+        return back()->with('mensaje', 'Nota eliminada con exito!');
     }
 
     public function fotos() {

@@ -69,13 +69,24 @@
                     </a>
                   </td>
                   <td>{{ $item->description }}</td>
-                  <td>
-                    <a href="{{ route('notas.editar', $item) }}" class="btn btn-warning btn-sm">Editar</a>
+                  <td class="row">
+                    <div class="col-md-4 offset-xs-5">
+                        <a href="{{ route('notas.editar', $item) }}" class="btn btn-warning btn-sm">Editar</a>
+                    </div>
+                    <div class="col-xs-12">
+                      <form action="{{ route('notas.eliminar', $item) }}" method="POST">
+                          @method('DELETE')
+                            @csrf
+                            <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                      </form>
+                    </div>
                   </td>
                 </tr>    
             @endforeach()
             
           </tbody>
         </table>
+
+        {{ $notas->links() }}
   </div>
 @endsection
