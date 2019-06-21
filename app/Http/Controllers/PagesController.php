@@ -36,6 +36,30 @@ class PagesController extends Controller
         return back()->with('mensaje', 'Nota creada con exito!');
     }
 
+    public function editar ($id) {
+
+        $nota = App\Nota::findOrFail($id);
+        return view('notas.editar', compact('nota'));
+     
+    }
+
+    public function update (Request $request, $id) {
+        $notaUpdate = App\Nota::findOrFail($id);
+        
+        $notaUpdate->nombre = $request->nombre;
+        $notaUpdate->description = $request->description;
+        
+        #validation
+        $request->validate([
+            'nombre'=>'required',
+            'description'=>'required'
+        ]);
+
+        $notaUpdate->save();
+        return  back()->with('mensajeUpdate', 'Nota editada con exito!');
+
+    }
+
     public function fotos() {
         return view('fotos');
     }

@@ -39,10 +39,10 @@
 
           <div class="row">
             <div class="col-md-3">
-            <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="{{ old('nombre')}}">
+              <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="{{ old('nombre')}}">
             </div>
             <div class="col-md-7">
-            <input type="text" name="description" class="form-control" placeholder="Description" value="{{ old('description') }}">
+              <input type="text" name="description" class="form-control" placeholder="Description" value="{{ old('description') }}">
             </div>
             <div class="col-md-2">
               <button class="btn btn-primary btn-block" type="submit">Agregar</button>
@@ -56,7 +56,7 @@
               <th scope="col">#</th>
               <th scope="col">Nombre</th>
               <th scope="col">Descripcion</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Accion</th>
             </tr>
           </thead>
           <tbody>
@@ -69,7 +69,9 @@
                     </a>
                   </td>
                   <td>{{ $item->description }}</td>
-                  <td>@mdo</td>
+                  <td>
+                    <a href="{{ route('notas.editar', $item) }}" class="btn btn-warning btn-sm">Editar</a>
+                  </td>
                 </tr>    
             @endforeach()
             
