@@ -24,6 +24,11 @@ class PagesController extends Controller
     public function crear(Request $request) {
         $notaNueva = new App\Nota;
 
+        $request->validate([
+            'nombre'=>'required',
+            'description'=>'required'
+        ]);
+
         $notaNueva->nombre = $request->nombre;
         $notaNueva->description = $request->description;
 

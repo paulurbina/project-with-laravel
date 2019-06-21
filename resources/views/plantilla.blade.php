@@ -17,6 +17,11 @@
 
         <form action="{{ route('notas.crear') }}" method="POST" class="pb-3">
           @csrf
+
+          @erro('nombre')
+
+          @enderro
+
           <div class="row">
             <div class="col-md-3">
               <input type="text" name="nombre" class="form-control" placeholder="Nombre">
