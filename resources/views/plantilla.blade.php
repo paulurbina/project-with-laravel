@@ -6,6 +6,30 @@
           Notas
       </h1>
 
+        @if (session('mensaje'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              {{ session('mensaje') }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+        @endif
+
+        <form action="{{ route('notas.crear') }}" method="POST" class="pb-3">
+          @csrf
+          <div class="row">
+            <div class="col-md-3">
+              <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+            </div>
+            <div class="col-md-7">
+              <input type="text" name="description" class="form-control" placeholder="Description">
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-primary btn-block" type="submit">Agregar</button>
+            </div>
+          </div>
+        </form>
+
       <table class="table">
           <thead>
             <tr>
