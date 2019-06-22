@@ -31,3 +31,5 @@ Route::get('about/{nombre?}', 'PagesController@about')->name('nosotros');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/notas', 'NotaController');
