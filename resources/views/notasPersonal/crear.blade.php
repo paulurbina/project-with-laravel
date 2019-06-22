@@ -12,7 +12,12 @@
                     </div>
                     <div class="card-body">     
                             @if ( session('mensaje') )
-                              <div class="alert alert-success">{{ session('mensaje') }}</div>
+                              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <p>{{ session('mensaje') }}</p>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
                             @endif
                             <form method="POST" action="/notas">
                               @csrf
@@ -24,7 +29,7 @@
                               />
                               <input
                                 type="text"
-                                name="descripcion"
+                                name="description"
                                 placeholder="Descripcion"
                                 class="form-control mb-2"
                               />

@@ -42,13 +42,20 @@ class NotaController extends Controller
      */
     public function store(Request $request)
     {
-            $notaNueva = new NotaPersonal();
-            $notaNueva->nombre = $request->nombre;
-            $notaNueva->description = $request->description;
+            $nota = new NotaPersonal();
+            $nota->nombre = $request->nombre;
+            $nota->description = $request->description;
 
-            $notaNueva->usuario = auth()->user()->email;
+            $nota->usuario = auth()->user()->email;
+            $nota->save();
 
-            return back()->with('mensaje', 'Nota creada satisfactoriamente');
+            #validate
+            $request->validate([
+                'nombre'=>'required',
+                'descripcion'=>'required'
+            ]);
+
+            return back()->with('mensaje', 'Nota creada satisfactoriamente!');
     }
 
     /**
